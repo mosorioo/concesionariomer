@@ -105,20 +105,20 @@ public class UsuarioController {
      */
 
     //@GetMapping("/buscar-todo")
-    @GetMapping("/usuarios")
-    public @ResponseBody Usuario buscarTodoUsuario(@RequestParam(value = "dni", defaultValue = "0") Long dni,
-            @RequestParam(value = "nombre-usuario") String nombreUsuario, 
-            @RequestParam(value = "email") String email) {
+    // @GetMapping("/usuarios")
+    // public @ResponseBody Usuario buscarTodoUsuario(@RequestParam(value = "dni", defaultValue = "0") Long dni,
+    //         @RequestParam(value = "nombre-usuario") String nombreUsuario, 
+    //         @RequestParam(value = "email") String email) {
 
-        try {
+    //     try {
 
-            return usuarioService.findAllUsuario(dni, nombreUsuario, email);
+    //         return usuarioService.findAllUsuario(dni, nombreUsuario, email);
 
-        } catch (Exception e) {
-            logger.error("qualitySensitive" + e.getMessage() + e.getStackTrace());
-            return null;
-        }
-    }
+    //     } catch (Exception e) {
+    //         logger.error("qualitySensitive" + e.getMessage() + e.getStackTrace());
+    //         return null;
+    //     }
+    // }
 
     // Espera un json y lo convierte a tipo clase NuevoUsuario
     @PostMapping("/crear")

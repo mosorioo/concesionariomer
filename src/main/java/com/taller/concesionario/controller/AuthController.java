@@ -64,6 +64,7 @@ public class AuthController {
 
     
     //Espera un json y lo convierte a tipo clase NuevoUsuario
+    //@PostMapping("/nuevousuario")
     @PostMapping("/usuarios")
     public ResponseEntity<?> nuevoUsuario(@Valid @RequestBody NuevoUsuarioDto nuevoUsuario,
                                           BindingResult bindingResult){
@@ -151,6 +152,7 @@ public class AuthController {
     //     return new ResponseEntity<>(jwtDto, HttpStatus.OK);
     // }
 
+    //@PostMapping("/login")
     @PostMapping("/session")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if (bindingResult.hasErrors())
