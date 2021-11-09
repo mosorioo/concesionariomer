@@ -1,0 +1,116 @@
+[1;31m2021-11-09 00:08:16.834 ERROR [JwtEntryPoint][http-nio-8080-exec-6] - Fallo el metodo commence
+[m[1;31m2021-11-09 00:12:00.006 ERROR [UsuarioController][http-nio-8080-exec-1] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@5ce1a9ed
+[m[1;31m2021-11-09 00:12:45.964 ERROR [UsuarioController][http-nio-8080-exec-2] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@35c7fea6
+[m[1;31m2021-11-09 00:13:01.178 ERROR [JwtProvider][http-nio-8080-exec-4] - Token mal formado
+[m[1;31m2021-11-09 00:13:01.180 ERROR [JwtEntryPoint][http-nio-8080-exec-4] - Fallo el metodo commence
+[m[1;31m2021-11-09 00:19:29.217 ERROR [JwtProvider][http-nio-8080-exec-6] - Fallo con la firma
+[m[1;31m2021-11-09 00:19:29.218 ERROR [JwtEntryPoint][http-nio-8080-exec-6] - Fallo el metodo commence
+[m[1;31m2021-11-09 00:19:33.009 ERROR [UsuarioController][http-nio-8080-exec-7] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@215f2622
+[m[1;31m2021-11-09 00:19:37.817 ERROR [JwtProvider][http-nio-8080-exec-8] - Fallo con la firma
+[m[1;31m2021-11-09 00:19:37.818 ERROR [JwtEntryPoint][http-nio-8080-exec-8] - Fallo el metodo commence
+[m[1;31m2021-11-09 00:19:44.375 ERROR [JwtProvider][http-nio-8080-exec-9] - Token mal formado
+[m[1;31m2021-11-09 00:19:44.376 ERROR [JwtEntryPoint][http-nio-8080-exec-9] - Fallo el metodo commence
+[m[1;31m2021-11-09 00:19:47.989 ERROR [JwtProvider][http-nio-8080-exec-10] - Token mal formado
+[m[1;31m2021-11-09 00:19:47.990 ERROR [JwtEntryPoint][http-nio-8080-exec-10] - Fallo el metodo commence
+[m[1;31m2021-11-09 00:19:52.107 ERROR [UsuarioController][http-nio-8080-exec-1] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@114407c0
+[m[1;31m2021-11-09 00:20:06.000 ERROR [UsuarioController][http-nio-8080-exec-2] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@4470c2db
+[m[1;31m2021-11-09 00:23:39.544 ERROR [UsuarioController][http-nio-8080-exec-6] - qualitySensitiveCould not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction[Ljava.lang.StackTraceElement;@3ef22e0
+[m[1;31m2021-11-09 00:25:19.531 ERROR [UsuarioController][http-nio-8080-exec-10] - qualitySensitiveCould not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction[Ljava.lang.StackTraceElement;@c02086a
+[m[1;31m2021-11-09 00:25:36.458 ERROR [UsuarioController][http-nio-8080-exec-2] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@22503ba8
+[m[1;31m2021-11-09 00:25:49.295 ERROR [UsuarioController][http-nio-8080-exec-3] - qualitySensitiveNo value present[Ljava.lang.StackTraceElement;@4feb22af
+[m[1;31m2021-11-09 00:26:21.952 ERROR [SqlExceptionHelper][http-nio-8080-exec-5] - Duplicate entry '' for key 'usuario.UK_5171l57faosmj8myawaucatdw'
+[m[1;31m2021-11-09 00:26:21.959 ERROR [UsuarioController][http-nio-8080-exec-5] - qualitySensitivecould not execute statement; SQL [n/a]; constraint [usuario.UK_5171l57faosmj8myawaucatdw]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement[Ljava.lang.StackTraceElement;@66dbaf73
+[m[33m2021-11-09 00:36:55.604 WARN  [DefaultHandlerExceptionResolver][http-nio-8080-exec-1] - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'dni' for method parameter type Long is present but converted to null]
+[m[32m2021-11-09 00:52:11.682 INFO  [ConcesionarioApplication][restartedMain] - Starting ConcesionarioApplication using Java 1.8.0_292 on WKSAR1091L.local with PID 8251 (/Users/mercedesosorioodreman/Desktop/concesionario/target/classes started by mercedesosorioodreman in /Users/mercedesosorioodreman/Desktop/concesionario)
+[m[32m2021-11-09 00:52:21.720 INFO  [ConcesionarioApplication][restartedMain] - No active profile set, falling back to default profiles: default
+[m[32m2021-11-09 00:52:21.780 INFO  [DevToolsPropertyDefaultsPostProcessor][restartedMain] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[m[32m2021-11-09 00:52:21.780 INFO  [DevToolsPropertyDefaultsPostProcessor][restartedMain] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[m[32m2021-11-09 00:52:22.900 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-09 00:52:22.903 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[m[32m2021-11-09 00:52:22.963 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.RolRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-09 00:52:22.966 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.UsuarioRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-09 00:52:22.967 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 55 ms. Found 0 JDBC repository interfaces.
+[m[32m2021-11-09 00:52:22.989 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-09 00:52:22.991 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[m[32m2021-11-09 00:52:23.064 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+[m[32m2021-11-09 00:52:23.776 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6e7fdf8f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-09 00:52:23.783 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-09 00:52:24.533 INFO  [TomcatWebServer][restartedMain] - Tomcat initialized with port(s): 8080 (http)
+[m[32m2021-11-09 00:52:24.561 INFO  [Http11NioProtocol][restartedMain] - Initializing ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-09 00:52:24.562 INFO  [StandardService][restartedMain] - Starting service [Tomcat]
+[m[32m2021-11-09 00:52:24.563 INFO  [StandardEngine][restartedMain] - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[m[32m2021-11-09 00:52:24.691 INFO  [[/]][restartedMain] - Initializing Spring embedded WebApplicationContext
+[m[32m2021-11-09 00:52:24.692 INFO  [ServletWebServerApplicationContext][restartedMain] - Root WebApplicationContext: initialization completed in 2910 ms
+[m[33m2021-11-09 00:52:24.891 WARN  [JpaBaseConfiguration$JpaWebConfiguration][restartedMain] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[m[32m2021-11-09 00:52:26.016 INFO  [HikariDataSource][restartedMain] - HikariPool-1 - Starting...
+[m[32m2021-11-09 00:52:27.041 INFO  [HikariDataSource][restartedMain] - HikariPool-1 - Start completed.
+[m[32m2021-11-09 00:52:28.970 INFO  [LocalContainerEntityManagerFactoryBean][restartedMain] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-09 00:52:31.042 INFO  [DefaultSecurityFilterChain][restartedMain] - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@892c86b, org.springframework.security.web.context.SecurityContextPersistenceFilter@77e0826c, org.springframework.security.web.header.HeaderWriterFilter@6052c93c, org.springframework.web.filter.CorsFilter@7b555bbc, org.springframework.security.web.authentication.logout.LogoutFilter@6e33313d, com.taller.concesionario.jwt.JwtTokenFilter@480736d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b035af9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5911e1f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b3d1828, org.springframework.security.web.session.SessionManagementFilter@70af9692, org.springframework.security.web.access.ExceptionTranslationFilter@4a85e025, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f88c706]
+[m[32m2021-11-09 00:52:31.876 INFO  [OptionalLiveReloadServer][restartedMain] - LiveReload server is running on port 35729
+[m[32m2021-11-09 00:52:31.925 INFO  [Http11NioProtocol][restartedMain] - Starting ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-09 00:52:31.994 INFO  [TomcatWebServer][restartedMain] - Tomcat started on port(s): 8080 (http) with context path ''
+[m[32m2021-11-09 00:52:32.022 INFO  [ConcesionarioApplication][restartedMain] - Started ConcesionarioApplication in 36.085 seconds (JVM running for 42.953)
+[m[32m2021-11-09 00:52:56.695 INFO  [[/]][http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[m[32m2021-11-09 00:52:56.696 INFO  [DispatcherServlet][http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+[m[32m2021-11-09 00:52:56.698 INFO  [DispatcherServlet][http-nio-8080-exec-1] - Completed initialization in 2 ms
+[m[32m2021-11-09 00:54:24.172 INFO  [Http11Processor][http-nio-8080-exec-5] - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+[m java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xf70x010x000x000xf30x030x03#0x1d0x00'p0x9ab0xa2ad0xcf<F0x9d0xc00xed#[0xbdIiaN0xdc0x1f'f0x030xa5$p1 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_292]
+[32m2021-11-09 00:55:59.783 INFO  [Http11Processor][http-nio-8080-exec-7] - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+[m java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xf70x010x000x000xf30x030x030x82>0x9e0xf00xe80xab0xf20xb50xdc0xc30x1f0xe00x87ZG0xbch0x9d/:0xcd0xc20xdd0xb8<0x1c0xaa:-0xe30x84T ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_292]
+[1;31m2021-11-09 00:58:22.225 ERROR [JwtProvider][http-nio-8080-exec-10] - Token expirado
+[m[1;31m2021-11-09 00:58:22.228 ERROR [JwtEntryPoint][http-nio-8080-exec-10] - Fallo el metodo commence
+[m[32m2021-11-09 01:04:30.733 INFO  [ConcesionarioApplication][restartedMain] - Starting ConcesionarioApplication using Java 1.8.0_292 on WKSAR1091L.local with PID 14144 (/Users/mercedesosorioodreman/Desktop/concesionario/target/classes started by mercedesosorioodreman in /Users/mercedesosorioodreman/Desktop/concesionario)
+[m[32m2021-11-09 01:04:40.756 INFO  [ConcesionarioApplication][restartedMain] - No active profile set, falling back to default profiles: default
+[m[32m2021-11-09 01:04:40.834 INFO  [DevToolsPropertyDefaultsPostProcessor][restartedMain] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[m[32m2021-11-09 01:04:40.835 INFO  [DevToolsPropertyDefaultsPostProcessor][restartedMain] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[m[32m2021-11-09 01:04:42.419 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-09 01:04:42.422 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[m[32m2021-11-09 01:04:42.529 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.RolRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-09 01:04:42.533 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.UsuarioRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-09 01:04:42.535 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 99 ms. Found 0 JDBC repository interfaces.
+[m[32m2021-11-09 01:04:42.581 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-09 01:04:42.585 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[m[32m2021-11-09 01:04:42.714 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 111 ms. Found 2 JPA repository interfaces.
+[m[32m2021-11-09 01:04:43.842 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f593525' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-09 01:04:43.852 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-09 01:04:44.613 INFO  [TomcatWebServer][restartedMain] - Tomcat initialized with port(s): 8080 (http)
+[m[32m2021-11-09 01:04:44.640 INFO  [Http11NioProtocol][restartedMain] - Initializing ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-09 01:04:44.641 INFO  [StandardService][restartedMain] - Starting service [Tomcat]
+[m[32m2021-11-09 01:04:44.642 INFO  [StandardEngine][restartedMain] - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[m[32m2021-11-09 01:04:44.774 INFO  [[/]][restartedMain] - Initializing Spring embedded WebApplicationContext
+[m[32m2021-11-09 01:04:44.775 INFO  [ServletWebServerApplicationContext][restartedMain] - Root WebApplicationContext: initialization completed in 3939 ms
+[m[33m2021-11-09 01:04:45.057 WARN  [JpaBaseConfiguration$JpaWebConfiguration][restartedMain] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[m[32m2021-11-09 01:04:46.319 INFO  [HikariDataSource][restartedMain] - HikariPool-1 - Starting...
+[m[32m2021-11-09 01:04:47.366 INFO  [HikariDataSource][restartedMain] - HikariPool-1 - Start completed.
+[m[32m2021-11-09 01:04:50.645 INFO  [LocalContainerEntityManagerFactoryBean][restartedMain] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-09 01:04:53.112 INFO  [DefaultSecurityFilterChain][restartedMain] - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3275605b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bc25d2e, org.springframework.security.web.header.HeaderWriterFilter@21b76da7, org.springframework.web.filter.CorsFilter@570ec06f, org.springframework.security.web.authentication.logout.LogoutFilter@bcc2c53, com.taller.concesionario.jwt.JwtTokenFilter@272de2b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4aec1062, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4755cbe4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31cebc52, org.springframework.security.web.session.SessionManagementFilter@4b4bffb, org.springframework.security.web.access.ExceptionTranslationFilter@cfca704, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@632601e4]
+[m[32m2021-11-09 01:04:54.080 INFO  [OptionalLiveReloadServer][restartedMain] - LiveReload server is running on port 35729
+[m[32m2021-11-09 01:04:54.139 INFO  [Http11NioProtocol][restartedMain] - Starting ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-09 01:04:54.256 INFO  [TomcatWebServer][restartedMain] - Tomcat started on port(s): 8080 (http) with context path ''
+[m[32m2021-11-09 01:04:54.298 INFO  [ConcesionarioApplication][restartedMain] - Started ConcesionarioApplication in 39.193 seconds (JVM running for 45.335)
+[m[32m2021-11-09 01:05:09.849 INFO  [[/]][http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[m[32m2021-11-09 01:05:09.850 INFO  [DispatcherServlet][http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+[m[32m2021-11-09 01:05:09.855 INFO  [DispatcherServlet][http-nio-8080-exec-1] - Completed initialization in 4 ms
+[m
