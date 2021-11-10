@@ -3,6 +3,7 @@ package com.taller.concesionario.controller;
 // import java.util.HashSet;
 // import java.util.Optional;
 // import java.util.Set;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import javax.validation.Valid;
 
@@ -164,11 +165,12 @@ public class UsuarioController {
     }
 
     //@DeleteMapping("/borrar")
-    @DeleteMapping("/usuarios")
-    public ResponseEntity<?> borrarUsuario(@RequestParam("dni") Long dni) {
+    //@DeleteMapping("/usuarios")
+    @DeleteMapping("/me")
+    public ResponseEntity<?> borrarUsuario(UsernamePasswordAuthenticationToken user) {
 
         try {
-            usuarioService.borrarUsuario(dni);
+            usuarioService.borrarUsuario(user.getName());
             return new ResponseEntity<>(new MensajeDto("Usuario borrado"), HttpStatus.NO_CONTENT);
 
         } catch (Exception e) {

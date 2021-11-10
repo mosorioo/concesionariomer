@@ -96,8 +96,9 @@ public class UsuarioService {
                 usuario = usuarioRepository.findByDni(dni).get();
     
             } else if (nombreUsuario != null || !nombreUsuario.isEmpty()) {
-                usuario = usuarioRepository.findByNombreUsuario(nombreUsuario).get();
+                //usuario = usuarioRepository.findByNombreUsuario(nombreUsuario).get();
     
+                usuario = usuarioRepository.findByExample
             } else if (email != null || !email.isEmpty()) {
                 usuario = usuarioRepository.findByEmail(email).get();
             }
@@ -176,24 +177,17 @@ public class UsuarioService {
             usuario.setApellido(usuarioDto.getApellido());
             usuario.setEmail(usuarioDto.getEmail());
             usuario.setDni(usuarioDto.getDni()); 
+//agregar el set password
     
             // Se actualizan lo datos
             usuarioRepository.save(usuario);
         }
     
-        public void borrarUsuario(Long dni) {
-    
-            // if (this.existsByUsuario(usuario.getNombreUsuario())) {
-            // return new ResponseEntity<>(new MensajeDto("Ese nombre ya existe"),
-            // HttpStatus.BAD_REQUEST);
-            // }
-            // if (this.existsByEmail(usuario.getEmail())) {
-            // return new ResponseEntity<>(new MensajeDto("Ese email ya existe"),
-            // HttpStatus.BAD_REQUEST);
-            // }
-    
-    
-            Usuario usuario = usuarioRepository.findByDni(dni).orElse(new Usuario());
+        public void borrarUsuario(String name) {
+
+    //crear el find by name
+            Usuario usuario = usuarioRepository.findByNombreUsuario(name).orElse(new Usuario());
+            //Usuario usuario = usuarioRepository.findByIdUsuario(idUsuario).orElse(new Usuario());
             if (usuario.getUsuario() != null) {
                 // Se borra el usuario
                 usuarioRepository.deleteById(usuario.getIdUsuario());
