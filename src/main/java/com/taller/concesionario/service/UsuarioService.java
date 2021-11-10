@@ -171,13 +171,12 @@ public class UsuarioService {
             // HttpStatus.BAD_REQUEST);
             // }
     
-    
             Usuario usuario = usuarioRepository.findByNombreUsuario(usuarioDto.getNombreUsuario()).get();
             usuario.setNombre(usuarioDto.getNombre());
             usuario.setApellido(usuarioDto.getApellido());
             usuario.setEmail(usuarioDto.getEmail());
-            usuario.setDni(usuarioDto.getDni()); 
-//agregar el set password
+            usuario.setDni(usuarioDto.getDni());
+            usuario.setPassword(usuarioDto.getPassword()); 
     
             // Se actualizan lo datos
             usuarioRepository.save(usuario);
@@ -185,7 +184,6 @@ public class UsuarioService {
     
         public void borrarUsuario(String name) {
 
-    //crear el find by name
             Usuario usuario = usuarioRepository.findByNombreUsuario(name).orElse(new Usuario());
             //Usuario usuario = usuarioRepository.findByIdUsuario(idUsuario).orElse(new Usuario());
             if (usuario.getUsuario() != null) {
