@@ -96,9 +96,9 @@ public class UsuarioService {
                 usuario = usuarioRepository.findByDni(dni).get();
     
             } else if (nombreUsuario != null || !nombreUsuario.isEmpty()) {
-                //usuario = usuarioRepository.findByNombreUsuario(nombreUsuario).get();
+                usuario = usuarioRepository.findByNombreUsuario(nombreUsuario).get();
     
-                usuario = usuarioRepository.findByExample
+                //usuario = usuarioRepository.findByExample;
             } else if (email != null || !email.isEmpty()) {
                 usuario = usuarioRepository.findByEmail(email).get();
             }
