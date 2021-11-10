@@ -176,7 +176,8 @@ public class UsuarioService {
             usuario.setApellido(usuarioDto.getApellido());
             usuario.setEmail(usuarioDto.getEmail());
             usuario.setDni(usuarioDto.getDni());
-            usuario.setPassword(usuarioDto.getPassword()); 
+            //usuario.setPassword(usuarioDto.getPassword()); 
+            usuario.setPassword(passwordEncoder.encode(usuarioDto.getPassword()));
     
             // Se actualizan lo datos
             usuarioRepository.save(usuario);
