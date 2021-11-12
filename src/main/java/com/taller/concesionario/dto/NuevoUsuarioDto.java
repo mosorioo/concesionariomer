@@ -23,7 +23,7 @@ public class NuevoUsuarioDto {
     private String apellido;
     
     @NotNull(message = "El DNI no puede estar vacio")
-    @Size(min=1, max=20, message = "La DNI puede tener hasta 20 digitos")
+    @Size(max=20, message = "La DNI puede tener hasta 20 digitos")
     private Long dni;
     
     //@NotBlank
