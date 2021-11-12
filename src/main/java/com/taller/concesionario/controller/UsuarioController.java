@@ -122,28 +122,28 @@ public class UsuarioController {
     // }
 
     // Espera un json y lo convierte a tipo clase NuevoUsuario
-    @PostMapping("/crear")
-    public ResponseEntity<?> crearUsuario(@Valid @RequestBody NuevoUsuarioDto nuevoUsuario, BindingResult bindingResult) {
+    // @PostMapping("/crear")
+    // public ResponseEntity<?> crearUsuario(@Valid @RequestBody NuevoUsuarioDto nuevoUsuario, BindingResult bindingResult) {
 
-        try {
-            if (bindingResult.hasErrors()) {
-                return new ResponseEntity<>(new MensajeDto("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
-            }
-            if (usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())) {
-                return new ResponseEntity<>(new MensajeDto("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-            }
-            if (usuarioService.existsByEmail(nuevoUsuario.getEmail())) {
-                return new ResponseEntity<>(new MensajeDto("Ese email ya existe"), HttpStatus.BAD_REQUEST);
-            }
+    //     try {
+    //         if (bindingResult.hasErrors()) {
+    //             return new ResponseEntity<>(new MensajeDto("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
+    //         }
+    //         if (usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())) {
+    //             return new ResponseEntity<>(new MensajeDto("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
+    //         }
+    //         if (usuarioService.existsByEmail(nuevoUsuario.getEmail())) {
+    //             return new ResponseEntity<>(new MensajeDto("Ese email ya existe"), HttpStatus.BAD_REQUEST);
+    //         }
 
-            usuarioService.crearUsuario(nuevoUsuario);
-            return new ResponseEntity<>(new MensajeDto("Usuario creado"), HttpStatus.CREATED);
+    //         usuarioService.crearUsuario(nuevoUsuario);
+    //         return new ResponseEntity<>(new MensajeDto("Usuario creado"), HttpStatus.CREATED);
 
-        } catch (Exception e) {
-            logger.error("qualitySensitive" + e.getMessage() + e.getStackTrace());
-            return new ResponseEntity<>(new MensajeDto("Error al crear usuario"), HttpStatus.BAD_REQUEST);
-        }   
-    }
+    //     } catch (Exception e) {
+    //         logger.error("qualitySensitive" + e.getMessage() + e.getStackTrace());
+    //         return new ResponseEntity<>(new MensajeDto("Error al crear usuario"), HttpStatus.BAD_REQUEST);
+    //     }   
+    // }
 
     //@PutMapping("/editar")
     @PutMapping("/usuarios")
