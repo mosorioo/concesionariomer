@@ -41,7 +41,7 @@ public class NuevoUsuarioDto {
     
     //@NotBlank
     @NotEmpty(message = "La contrasena no puede estar vacia")
-    @Size(min=6,max=6, message = "La contrasena debe tener 6 caracteres") //No valida esto
+    @Size(min=6, max=6, message = "La contrasena debe tener 6 caracteres") //No valida esto
     private String password;
     
     //Por defecto crea un usuario normal
