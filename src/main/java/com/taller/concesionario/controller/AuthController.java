@@ -73,6 +73,8 @@ public class AuthController {
         //      return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         //  }
 
+        //Validaciones
+
         if(StringUtils.isBlank(nuevoUsuario.getNombre()))
         return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
 
