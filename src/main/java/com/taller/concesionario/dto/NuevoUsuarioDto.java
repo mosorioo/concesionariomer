@@ -7,6 +7,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +25,7 @@ public class NuevoUsuarioDto {
     private String apellido;
     
     @NotNull(message = "El DNI no puede estar vacio")
-    @Size(max=20, message = "La DNI puede tener hasta 20 digitos")
+    //@Size(max=20, message = "La DNI puede tener hasta 20 digitos")
     private Long dni;
     
     //@NotBlank
