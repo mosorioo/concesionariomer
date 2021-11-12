@@ -26,7 +26,6 @@ public class NuevoUsuarioDto {
     private String apellido;
     
     @NotNull(message = "El DNI no puede estar vacio")
-    @Max(12)
     private Long dni;
     
     //@NotBlank
