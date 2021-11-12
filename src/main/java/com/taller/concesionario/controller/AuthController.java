@@ -101,7 +101,7 @@ public class AuthController {
         }
 
         if(bindingResult.hasErrors()){
-            return new ResponseEntity<>(new MensajeDto("Campos incompletos o email invalido"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MensajeDto("Campos incompletos o email con formato incorrecto"), HttpStatus.BAD_REQUEST);
         }
 
         Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getApellido(),nuevoUsuario.getDni(), nuevoUsuario.getNombreUsuario(),
