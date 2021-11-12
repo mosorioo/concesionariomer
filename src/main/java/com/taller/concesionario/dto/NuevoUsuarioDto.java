@@ -4,6 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,22 +12,34 @@ import java.util.Set;
 public class NuevoUsuarioDto {
 
     //@NotBlank(message = "El campo nombre no puede estar vacio")
-    @NotEmpty(message = "El campo nombre no puede estar vacio")
+    @Size(min=1, max=50, message = "El nombre puede tener hasta 50 caracteres")
+    @NotEmpty(message = "El nombre no puede estar vacio")
     private String nombre;
+    
     //@NotBlank
-    @NotEmpty(message = "El campo apellido no puede estar vacio")
+    @NotEmpty(message = "El apellido no puede estar vacio")
+    @Size(min=1, max=50, message = "El apellido puede tener hasta 50 caracteres")
     private String apellido;
-    @NotNull(message = "El campo DNI no puede estar vacio")
+    
+    @NotNull(message = "El DNI no puede estar vacio")
+    @Size(min=1, max=20, message = "La DNI puede tener hasta 20 digitos")
     private Long dni;
+    
     //@NotBlank
-    @NotEmpty(message = "El campo nombre de Usuario no puede estar vacio")
+    @NotEmpty(message = "El nombre de Usuario no puede estar vacio")
+    @Size(min=1, max=20, message = "El nombre de usuario puede tener hasta 20 caracteres")
     private String nombreUsuario;
+    
     @NotEmpty(message = "El campo email no puede estar vacio")
     @Email
+    @Size(max=50, message = "El email puede tener hasta 50 caracteres")
     private String email;
+    
     //@NotBlank
-    @NotEmpty(message = "El campo contrasena no puede estar vacio")
+    @NotEmpty(message = "La contrasena no puede estar vacio")
+    @Size(min=6,max=6, message = "La contrasena debe tener 6 caracteres")
     private String password;
+    
     //Por defecto crea un usuario normal
     //Si quiero un usuario Admin debo pasar este campo roles
     private Set<String> roles = new HashSet<>();
