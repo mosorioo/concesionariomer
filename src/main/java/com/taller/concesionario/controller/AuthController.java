@@ -69,9 +69,6 @@ public class AuthController {
     @PostMapping("/usuarios")
     public ResponseEntity<?> nuevoUsuario(@Valid @RequestBody NuevoUsuarioDto nuevoUsuario,
                                           BindingResult bindingResult){
-         if(bindingResult.hasErrors()){
-             return new ResponseEntity<>(new MensajeDto("Campos incompletos o email invalido"), HttpStatus.BAD_REQUEST);
-         }
 
         if(StringUtils.isBlank(nuevoUsuario.getNombre()))
         return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -101,6 +98,10 @@ public class AuthController {
     
         if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
             return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
+        }
+
+        if(bindingResult.hasErrors()){
+            return new ResponseEntity<>(new MensajeDto("Campos incompletos o email invalido"), HttpStatus.BAD_REQUEST);
         }
 
         Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getApellido(),nuevoUsuario.getDni(), nuevoUsuario.getNombreUsuario(),
