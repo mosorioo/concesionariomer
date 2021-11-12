@@ -98,7 +98,7 @@ public class UsuarioController {
     }
 
     /**
-     * Metodo que botiene todos los datos del usuario incluyendo el password 
+     * Metodo que obtiene todos los datos del usuario incluyendo el password 
      * @param dni
      * @param nombreUsuario
      * @param email
@@ -141,7 +141,7 @@ public class UsuarioController {
 
         } catch (Exception e) {
             logger.error("qualitySensitive" + e.getMessage() + e.getStackTrace());
-            return new ResponseEntity<>(new MensajeDto("Error al crear usaurio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MensajeDto("Error al crear usuario"), HttpStatus.BAD_REQUEST);
         }   
     }
 
@@ -155,7 +155,7 @@ public class UsuarioController {
             }
 
             usuarioService.editarUsuario(usuarioDto);
-            //return new ResponseEntity<>(new MensajeDto("Usuario actualizado"), HttpStatus.CREATED);
+            //return new ResponseEntity<>(new MensajeDto("Usuario actualizado"), HttpStatus.CREATED); 
             return new ResponseEntity<>(usuarioDto, HttpStatus.OK); //Agregar: mostrar los datos del usuario creado
 
         } catch (Exception e) {

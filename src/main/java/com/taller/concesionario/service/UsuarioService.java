@@ -112,26 +112,26 @@ public class UsuarioService {
             return usuarioDto;
         }
     
-        public Usuario findAllUsuario(Long dni, String nombreUsuario, String email) {
+        // public Usuario findAllUsuario(Long dni, String nombreUsuario, String email) {
     
-            Usuario usuario = new Usuario();
+        //     Usuario usuario = new Usuario();
     
-            // Verifico que parametros llegaron dando prioridad al DNI
-            if (dni != null && dni > 0) {
-                usuario = usuarioRepository.findByDni(dni).get();
+        //     // Verifico que parametros llegaron dando prioridad al DNI
+        //     if (dni != null && dni > 0) {
+        //         usuario = usuarioRepository.findByDni(dni).get();
     
-            } else if (nombreUsuario != null || !nombreUsuario.isEmpty()) {
-                usuario = usuarioRepository.findByNombreUsuario(nombreUsuario).get();
+        //     } else if (nombreUsuario != null || !nombreUsuario.isEmpty()) {
+        //         usuario = usuarioRepository.findByNombreUsuario(nombreUsuario).get();
     
-            } else if (email != null || !email.isEmpty()) {
-                usuario = usuarioRepository.findByEmail(email).get();
-            }
+        //     } else if (email != null || !email.isEmpty()) {
+        //         usuario = usuarioRepository.findByEmail(email).get();
+        //     }
     
-            // Desencripto el password
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        //     // Desencripto el password
+        //     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     
-            return usuario;
-        }
+        //     return usuario;
+        // }
     
         public void crearUsuario(NuevoUsuarioDto nuevoUsuario) {
     
@@ -183,9 +183,9 @@ public class UsuarioService {
             usuarioRepository.save(usuario);
         }
     
-        public void borrarUsuario(String name) {
+        public void borrarUsuario(String nameUser) {
 
-            Usuario usuario = usuarioRepository.findByNombreUsuario(name).orElse(new Usuario());
+            Usuario usuario = usuarioRepository.findByNombreUsuario(nameUser).orElse(new Usuario());
             //Usuario usuario = usuarioRepository.findByIdUsuario(idUsuario).orElse(new Usuario());
             if (usuario.getUsuario() != null) {
                 // Se borra el usuario

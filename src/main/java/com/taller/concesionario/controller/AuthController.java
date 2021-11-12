@@ -12,7 +12,7 @@ import com.taller.concesionario.jwt.JwtProvider;
 import com.taller.concesionario.service.RolService;
 import com.taller.concesionario.service.UsuarioService;
 
-// import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 // import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -72,16 +72,34 @@ public class AuthController {
             return new ResponseEntity<>(new MensajeDto("Campos incompletos o email invalido"), HttpStatus.BAD_REQUEST);
         }
         if(usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())){
-            return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
         }
 
         if(usuarioService.existsByDni(nuevoUsuario.getDni())){
-            return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.CONFLICT);
         }
 
         if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
-            return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
         }
+
+        if(StringUtils.isBlank(nuevoUsuario.getNombre()))
+        return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+
+        if(StringUtils.isBlank(nuevoUsuario.getApellido()))
+        return new ResponseEntity<>(new MensajeDto("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
+
+        if(StringUtils.isBlank(nuevoUsuario.getNombreUsuario()))
+            return new ResponseEntity<>(new MensajeDto("El nombre de usuario es obligatorio"), HttpStatus.BAD_REQUEST);
+
+        if(StringUtils.isBlank(nuevoUsuario.getEmail()))
+            return new ResponseEntity<>(new MensajeDto("El e-mail es obligatorio"), HttpStatus.BAD_REQUEST);
+
+        if(nuevoUsuario.getDni() == null)
+            return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST);
+        
+        if(StringUtils.isBlank(nuevoUsuario.getPassword()))
+            return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
 
         Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getApellido(),nuevoUsuario.getDni(), nuevoUsuario.getNombreUsuario(),
                 nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
@@ -156,7 +174,7 @@ public class AuthController {
     @PostMapping("/session")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if (bindingResult.hasErrors())
-            return new ResponseEntity(new MensajeDto("Campos vacios o incorrectos"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new MensajeDto("Campos vacios o incompletos"), HttpStatus.BAD_REQUEST);
         Authentication authentication =
                 authenticationManager.authenticate(
                         new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(),
