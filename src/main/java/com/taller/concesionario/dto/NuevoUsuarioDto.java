@@ -2,6 +2,7 @@ package com.taller.concesionario.dto;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -25,7 +26,7 @@ public class NuevoUsuarioDto {
     private String apellido;
     
     @NotNull(message = "El DNI no puede estar vacio")
-    //@Size(max=20, message = "La DNI puede tener hasta 20 digitos")
+    @Max(12)
     private Long dni;
     
     //@NotBlank
