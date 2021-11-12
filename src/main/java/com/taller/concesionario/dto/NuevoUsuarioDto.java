@@ -2,6 +2,7 @@ package com.taller.concesionario.dto;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import java.util.HashSet;
@@ -9,17 +10,22 @@ import java.util.Set;
 
 public class NuevoUsuarioDto {
 
-    @NotBlank(message = "Name is mandatory")
+    //@NotBlank(message = "El campo nombre no puede estar vacio")
+    @NotEmpty(message = "El campo nombre no puede estar vacio")
     private String nombre;
-    @NotBlank
+    //@NotBlank
+    @NotEmpty(message = "El campo apellido no puede estar vacio")
     private String apellido;
-    @NotNull
+    @NotNull(message = "El campo DNI no puede estar vacio")
     private Long dni;
-    @NotBlank
+    //@NotBlank
+    @NotEmpty(message = "El campo nombre de Usuario no puede estar vacio")
     private String nombreUsuario;
+    @NotEmpty(message = "El campo email no puede estar vacio")
     @Email
     private String email;
-    @NotBlank
+    //@NotBlank
+    @NotEmpty(message = "El campo contrasena no puede estar vacio")
     private String password;
     //Por defecto crea un usuario normal
     //Si quiero un usuario Admin debo pasar este campo roles
