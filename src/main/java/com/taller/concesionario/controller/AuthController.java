@@ -71,17 +71,6 @@ public class AuthController {
         if(bindingResult.hasErrors()){
             return new ResponseEntity<>(new MensajeDto("Campos incompletos o email invalido"), HttpStatus.BAD_REQUEST);
         }
-        if(usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())){
-            return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
-        }
-
-        if(usuarioService.existsByDni(nuevoUsuario.getDni())){
-            return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.CONFLICT);
-        }
-
-        if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
-            return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
-        }
 
         if(StringUtils.isBlank(nuevoUsuario.getNombre()))
         return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -100,6 +89,18 @@ public class AuthController {
         
         if(StringUtils.isBlank(nuevoUsuario.getPassword()))
             return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
+        
+        if(usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())){
+            return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
+        }
+    
+        if(usuarioService.existsByDni(nuevoUsuario.getDni())){
+            return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.CONFLICT);
+        }
+    
+        if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
+            return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
+        }
 
         Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getApellido(),nuevoUsuario.getDni(), nuevoUsuario.getNombreUsuario(),
                 nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
