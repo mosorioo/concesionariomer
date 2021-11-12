@@ -1,5 +1,6 @@
 package com.taller.concesionario.dto;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -14,6 +15,7 @@ public class NuevoUsuarioDto {
     //@NotBlank(message = "El campo nombre no puede estar vacio")
     @Size(min=1, max=50, message = "El nombre puede tener hasta 50 caracteres")
     @NotEmpty(message = "El nombre no puede estar vacio")
+    @Valid
     private String nombre;
     
     //@NotBlank
