@@ -173,18 +173,6 @@ public class UsuarioController {
             if(StringUtils.isBlank(usuarioDto.getPassword()))
                 return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
             
-            if(usuarioService.existsByUsuario(usuarioDto.getNombreUsuario())){
-                return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
-            }
-        
-            if(usuarioService.existsByDni(usuarioDto.getDni())){
-                return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.CONFLICT);
-            }
-        
-            if(usuarioService.existsByEmail(usuarioDto.getEmail())){
-                return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
-            }
-
             if (bindingResult.hasErrors()) {
                 //return new ResponseEntity<>(new MensajeDto("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
                 return new ResponseEntity<>(new MensajeDto("Campos incorrectos o incompletos. Nombre, Apellido, Nombre de Usuario, Email: hasta 20 caracteres, Contrasena = 6 caracteres"), HttpStatus.BAD_REQUEST);
