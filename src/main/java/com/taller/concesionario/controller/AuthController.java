@@ -182,6 +182,7 @@ public class AuthController {
     //     usuarioService.deleteUsuario(idUsuario);
     //     return new ResponseEntity(new MensajeDto("Usuario eliminado"), HttpStatus.OK);
     // }
+    //
     
     // //Obtener lista de usuarios FUNCIONA SOLO PARA PRUEBAS LOCALES
     @GetMapping("/Usuarios")
