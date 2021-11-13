@@ -16,13 +16,13 @@ import java.util.Set;
 public class NuevoUsuarioDto {
 
     //@NotBlank(message = "El campo nombre no puede estar vacio")
-    @Size(min=1, max=50, message = "El nombre puede tener hasta 50 caracteres")
+    @Size(min=1, max=20, message = "El nombre puede tener hasta 20 caracteres")
     @NotEmpty(message = "El nombre no puede estar vacio")
     private String nombre;
     
     //@NotBlank
     @NotEmpty(message = "El apellido no puede estar vacio")
-    @Size(min=1, max=50, message = "El apellido puede tener hasta 50 caracteres")
+    @Size(min=1, max=20, message = "El apellido puede tener hasta 20 caracteres")
     private String apellido;
     
     @NotNull(message = "El DNI no puede estar vacio")
@@ -35,7 +35,7 @@ public class NuevoUsuarioDto {
     
     @NotEmpty(message = "El campo email no puede estar vacio")
     @Email
-    @Size(max=50, message = "El email puede tener hasta 50 caracteres")
+    @Size(max=20, message = "El email puede tener hasta 20 caracteres")
     private String email;
     
     //@NotBlank
