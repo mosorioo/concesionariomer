@@ -18,32 +18,32 @@ import java.util.Set;
 public class NuevoUsuarioDto {
 
     //@NotBlank(message = "El campo nombre no puede estar vacio")
-    @Size(min=1, max=20, message = "El nombre puede tener hasta 20 caracteres")
-    @NotEmpty(message = "El nombre no puede estar vacio")
+    @Size(min=1, max=20)
+    @NotEmpty
     private String nombre;
     
     //@NotBlank
-    @NotEmpty(message = "El apellido no puede estar vacio")
-    @Size(min=1, max=20, message = "El apellido puede tener hasta 20 caracteres")
+    @NotEmpty
+    @Size(min=1, max=20)
     private String apellido;
     
-    @NotNull(message = "El DNI no puede estar vacio")
+    @NotNull
     @Max(999999999)
     private Long dni;
     
     //@NotBlank
-    @NotEmpty(message = "El nombre de Usuario no puede estar vacio")
-    @Size(min=1, max=20, message = "El nombre de usuario puede tener hasta 20 caracteres")
+    @NotEmpty
+    @Size(min=1, max=20)
     private String nombreUsuario;
     
-    @NotEmpty(message = "El campo email no puede estar vacio")
+    @NotEmpty
     @Email
-    @Size(max=20, message = "El email puede tener hasta 20 caracteres")
+    @Size(max=20)
     private String email;
     
     //@NotBlank
-    @NotEmpty(message = "La contrasena no puede estar vacia")
-    @Size(min=6, max=6, message = "La contrasena debe tener 6 caracteres") //No valida esto
+    @NotEmpty
+    @Size(min=6, max=6)
     private String password;
     
     //Por defecto crea un usuario normal

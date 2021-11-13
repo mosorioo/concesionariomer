@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-//import java.util.List;
+import java.util.List;
 
 //import javax.swing.text.html.Option;
 
@@ -73,9 +73,9 @@ public class UsuarioService {
 
     //Otros mas
 
-    // public List<Usuario> listaUsuario(){
-    //     return  usuarioRepository.findAll();
-    // }
+    public List<Usuario> listaUsuario(){
+        return  usuarioRepository.findAll();
+    }
 
     // public Optional<Usuario> getUsuario(int idUsuario){
     //     return  usuarioRepository.findById(idUsuario);

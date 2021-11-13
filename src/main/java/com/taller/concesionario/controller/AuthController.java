@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.*;
 // import org.springframework.http.HttpStatus;
 // import org.springframework.http.ResponseEntity;
 
-// import java.util.List;
+ import java.util.List;
 
 //import antlr.StringUtils;
 
@@ -119,59 +119,6 @@ public class AuthController {
         return new ResponseEntity<Usuario>(usuario, HttpStatus.CREATED); //Agregar: mostrar los datos del usuario creado
     }
 
-        
-    //Espera un json y lo convierte a tipo clase NuevoUsuario
-    //url
-    //Viejoooo
-    // @PostMapping("/usuario")
-    // public ResponseEntity<?> nuevoUsuario(@Valid @RequestBody UsuarioDto nuevoUsuario,
-    //                                       BindingResult bindingResult){
-    //     // if(bindingResult.hasErrors()){
-    //     //     return new ResponseEntity<>(new Mensaje("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
-    //     // }
-    //     if(usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())){
-    //         return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.BAD_REQUEST);
-    //     }
-    //     if(usuarioService.existsByDni(nuevoUsuario.getDni())){
-    //         return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.BAD_REQUEST);
-    //     }
-    //     if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
-    //         return new ResponseEntity<>(new MensajeDto("E-mail existente"), HttpStatus.BAD_REQUEST);
-    //     }
-
-    //     Usuario usuario = new Usuario(nuevoUsuario.getNombreUsuario(), nuevoUsuario.getApellido(), nuevoUsuario.getNombre(), nuevoUsuario.getDni(), 
-    //             nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
-
-    //     Set<Rol> roles = new HashSet<>();
-    //     roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
-    //     if(nuevoUsuario.getRoles().contains("admin"))
-    //         roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
-    //     usuario.setRoles(roles);
-
-    //     usuarioService.save(usuario);
-
-    //     //return new ResponseEntity<>(new Mensaje("Usuario creado"), HttpStatus.CREATED); //Agregar: mostrar los datos del usuario creado
-    //     return new ResponseEntity<>(usuario, HttpStatus.CREATED); //Agregar: mostrar los datos del usuario creado
-      
-    // }
-
-    //@GetMapping("/login")//
-  //  @CrossOrigin
-    // @PostMapping("/login")
-    // public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
-    //     if (bindingResult.hasErrors())
-    //         return new ResponseEntity(new MensajeDto("Campos mal"), HttpStatus.BAD_REQUEST);
-    //     Authentication authentication =
-    //             authenticationManager.authenticate(
-    //                     new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(),
-    //                             loginUsuario.getPassword()));
-    //     SecurityContextHolder.getContext().setAuthentication(authentication);
-    //     String jwt = jwtProvider.generateToken(authentication);
-    //     UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-    //     JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
-    //     //JwtDto jwtDto = new JwtDto(jwt, userDetails.getIdUsuario(), userDetails.getAuthorities());
-    //     return new ResponseEntity<>(jwtDto, HttpStatus.OK);
-    // }
 
     //@PostMapping("/login")
     @PostMapping("/session")
@@ -236,13 +183,13 @@ public class AuthController {
     //     return new ResponseEntity(new MensajeDto("Usuario eliminado"), HttpStatus.OK);
     // }
     
-    // //Obtener lista de usuarios FUNCIONA
-    // @GetMapping("/listaUsuario")
-    // public ResponseEntity<List<Usuario>> listaUsuarios(){
+    // //Obtener lista de usuarios FUNCIONA SOLO PARA PRUEBAS LOCALES
+    @GetMapping("/Usuarios")
+    public ResponseEntity<List<Usuario>> listaUsuarios(){
 
-    //     List<Usuario> usuarios = usuarioService.listaUsuario();
-    //     return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
-    // }
+        List<Usuario> usuarios = usuarioService.listaUsuario();
+        return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
+    }
 
     // @GetMapping("/consultarUsuario/{idUsuario}")
     // public ResponseEntity<Usuario> usuarioById(@PathVariable("idUsuario") int idUsuario){
