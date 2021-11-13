@@ -36,6 +36,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import org.apache.commons.lang3.StringUtils;
+
 @RestController
 //@RequestMapping("/usuario")
 @CrossOrigin
@@ -149,11 +152,44 @@ public class UsuarioController {
     @PutMapping("/usuarios")
     public ResponseEntity<?> editarUsuario(@Valid @RequestBody UsuarioDto usuarioDto, BindingResult bindingResult) {
 
+        //Generico
         try {
-            if (bindingResult.hasErrors()) {
-                return new ResponseEntity<>(new MensajeDto("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
+            
+            if(StringUtils.isBlank(usuarioDto.getNombre()))
+            return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+    
+            if(StringUtils.isBlank(usuarioDto.getApellido()))
+            return new ResponseEntity<>(new MensajeDto("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
+    
+            if(StringUtils.isBlank(usuarioDto.getNombreUsuario()))
+                return new ResponseEntity<>(new MensajeDto("El nombre de usuario es obligatorio"), HttpStatus.BAD_REQUEST);
+    
+            if(StringUtils.isBlank(usuarioDto.getEmail()))
+                return new ResponseEntity<>(new MensajeDto("El e-mail es obligatorio"), HttpStatus.BAD_REQUEST);
+    
+            if(usuarioDto.getDni() == null)
+                return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST); 
+    
+            if(StringUtils.isBlank(usuarioDto.getPassword()))
+                return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
+            
+            if(usuarioService.existsByUsuario(usuarioDto.getNombreUsuario())){
+                return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
+            }
+        
+            if(usuarioService.existsByDni(usuarioDto.getDni())){
+                return new ResponseEntity<>(new MensajeDto("DNI existente"), HttpStatus.CONFLICT);
+            }
+        
+            if(usuarioService.existsByEmail(usuarioDto.getEmail())){
+                return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
             }
 
+            if (bindingResult.hasErrors()) {
+                //return new ResponseEntity<>(new MensajeDto("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>(new MensajeDto("Campos incorrectos o incompletos. Nombre, Apellido, Nombre de Usuario, Email: hasta 20 caracteres, Contrasena = 6 caracteres"), HttpStatus.BAD_REQUEST);
+            }
+    
             usuarioService.editarUsuario(usuarioDto);
             //return new ResponseEntity<>(new MensajeDto("Usuario actualizado"), HttpStatus.CREATED); 
             return new ResponseEntity<>(usuarioDto, HttpStatus.OK); //Agregar: mostrar los datos del usuario creado

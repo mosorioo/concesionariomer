@@ -103,4 +103,214 @@
 [m[33m2021-11-13 16:28:31.701 WARN  [PoolBase][http-nio-8080-exec-3] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@71a65e62 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
 [m[33m2021-11-13 16:28:31.731 WARN  [PoolBase][http-nio-8080-exec-3] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3d7ca4ee (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
 [m[33m2021-11-13 16:28:31.770 WARN  [PoolBase][http-nio-8080-exec-3] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@27d7b7f4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.455 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1784ceaa (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.485 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2659baf3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.498 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@46eb460c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.512 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@77ab31e5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.524 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2acd4021 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.543 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5def0cb6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.556 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@73e52af7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.568 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@33e9b0e2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.583 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@358a6287 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[33m2021-11-13 16:30:18.598 WARN  [PoolBase][http-nio-8080-exec-10] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@10a5523c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+[m[1;31m2021-11-13 16:30:48.436 ERROR [SqlExceptionHelper][http-nio-8080-exec-10] - HikariPool-1 - Connection is not available, request timed out after 30006ms.
+[m[1;31m2021-11-13 16:30:48.439 ERROR [SqlExceptionHelper][http-nio-8080-exec-10] - User 'bb36ccca2568df' has exceeded the 'max_user_connections' resource (current value: 10)
+[m[1;31m2021-11-13 16:30:48.535 ERROR [[dispatcherServlet]][http-nio-8080-exec-10] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection] with root cause
+[m java.sql.SQLSyntaxErrorException: User 'bb36ccca2568df' has exceeded the 'max_user_connections' resource (current value: 10)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712) ~[HikariCP-4.0.3.jar:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_292]
+[1;31m2021-11-13 16:30:48.814 ERROR [[localhost]][http-nio-8080-exec-10] - Exception Processing ErrorPage[errorCode=0, location=/error]
+[m org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:310) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:273) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.io.FilterOutputStream.flush(FilterOutputStream.java:140) ~[?:1.8.0_292]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1193) ~[jackson-core-2.12.5.jar:2.12.5]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1008) ~[jackson-databind-2.12.5.jar:2.12.5]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:454) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:106) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:87) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:403) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:249) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:344) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_292]
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[?:1.8.0_292]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[?:1.8.0_292]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[?:1.8.0_292]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[?:1.8.0_292]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:470) ~[?:1.8.0_292]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:135) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1363) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:766) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:719) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:709) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:573) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:221) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1205) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:402) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:306) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	... 92 more
+[32m2021-11-13 16:35:54.096 INFO  [LocalContainerEntityManagerFactoryBean][Thread-6] - Closing JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-13 16:35:54.164 INFO  [HikariDataSource][Thread-6] - HikariPool-1 - Shutdown initiated...
+[m[32m2021-11-13 16:35:54.273 INFO  [HikariDataSource][Thread-6] - HikariPool-1 - Shutdown completed.
+[m[32m2021-11-13 16:36:10.977 INFO  [ConcesionarioApplication][restartedMain] - Starting ConcesionarioApplication using Java 1.8.0_292 on WKSAR1091L.local with PID 85536 (/Users/mercedesosorioodreman/Desktop/concesionario/target/classes started by mercedesosorioodreman in /Users/mercedesosorioodreman/Desktop/concesionario)
+[m[32m2021-11-13 16:36:20.990 INFO  [ConcesionarioApplication][restartedMain] - No active profile set, falling back to default profiles: default
+[m[32m2021-11-13 16:36:22.829 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-13 16:36:22.830 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[m[32m2021-11-13 16:36:22.895 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.RolRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-13 16:36:22.902 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.UsuarioRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-13 16:36:22.903 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 69 ms. Found 0 JDBC repository interfaces.
+[m[32m2021-11-13 16:36:23.071 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-13 16:36:23.072 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[m[32m2021-11-13 16:36:23.196 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 123 ms. Found 2 JPA repository interfaces.
+[m[32m2021-11-13 16:36:23.911 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5395b6b3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-13 16:36:23.932 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-13 16:36:24.591 INFO  [TomcatWebServer][restartedMain] - Tomcat initialized with port(s): 8080 (http)
+[m[32m2021-11-13 16:36:24.594 INFO  [Http11NioProtocol][restartedMain] - Initializing ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-13 16:36:24.597 INFO  [StandardService][restartedMain] - Starting service [Tomcat]
+[m[32m2021-11-13 16:36:24.599 INFO  [StandardEngine][restartedMain] - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[m[32m2021-11-13 16:36:24.617 INFO  [[/]][restartedMain] - Initializing Spring embedded WebApplicationContext
+[m[32m2021-11-13 16:36:24.619 INFO  [ServletWebServerApplicationContext][restartedMain] - Root WebApplicationContext: initialization completed in 3621 ms
+[m[33m2021-11-13 16:36:24.800 WARN  [JpaBaseConfiguration$JpaWebConfiguration][restartedMain] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[m[32m2021-11-13 16:36:25.681 INFO  [HikariDataSource][restartedMain] - HikariPool-2 - Starting...
+[m[32m2021-11-13 16:36:28.331 INFO  [HikariDataSource][restartedMain] - HikariPool-2 - Start completed.
+[m[32m2021-11-13 16:36:32.729 INFO  [LocalContainerEntityManagerFactoryBean][restartedMain] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-13 16:36:35.660 INFO  [DefaultSecurityFilterChain][restartedMain] - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26b8f96a, org.springframework.security.web.context.SecurityContextPersistenceFilter@23f39e23, org.springframework.security.web.header.HeaderWriterFilter@2a1fee7b, org.springframework.web.filter.CorsFilter@3710f534, org.springframework.security.web.authentication.logout.LogoutFilter@52a641eb, com.taller.concesionario.jwt.JwtTokenFilter@21139634, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12a9f248, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4710ba50, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c16a0b7, org.springframework.security.web.session.SessionManagementFilter@417d7b94, org.springframework.security.web.access.ExceptionTranslationFilter@28732306, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47c0ca66]
+[m[32m2021-11-13 16:36:37.243 INFO  [OptionalLiveReloadServer][restartedMain] - LiveReload server is running on port 35729
+[m[32m2021-11-13 16:36:37.354 INFO  [Http11NioProtocol][restartedMain] - Starting ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-13 16:36:37.362 INFO  [TomcatWebServer][restartedMain] - Tomcat started on port(s): 8080 (http) with context path ''
+[m[32m2021-11-13 16:36:37.395 INFO  [ConcesionarioApplication][restartedMain] - Started ConcesionarioApplication in 41.654 seconds (JVM running for 667.106)
+[m[32m2021-11-13 16:36:37.504 INFO  [ConditionEvaluationDeltaLoggingListener][restartedMain] - Condition evaluation unchanged
+[m[32m2021-11-13 16:37:45.093 INFO  [LocalContainerEntityManagerFactoryBean][Thread-8] - Closing JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-13 16:37:45.098 INFO  [HikariDataSource][Thread-8] - HikariPool-2 - Shutdown initiated...
+[m[32m2021-11-13 16:37:46.583 INFO  [HikariDataSource][Thread-8] - HikariPool-2 - Shutdown completed.
+[m[32m2021-11-13 16:38:02.510 INFO  [ConcesionarioApplication][restartedMain] - Starting ConcesionarioApplication using Java 1.8.0_292 on WKSAR1091L.local with PID 85536 (/Users/mercedesosorioodreman/Desktop/concesionario/target/classes started by mercedesosorioodreman in /Users/mercedesosorioodreman/Desktop/concesionario)
+[m[32m2021-11-13 16:38:12.529 INFO  [ConcesionarioApplication][restartedMain] - No active profile set, falling back to default profiles: default
+[m[32m2021-11-13 16:38:14.033 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-13 16:38:14.034 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[m[32m2021-11-13 16:38:14.096 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.RolRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-13 16:38:14.109 INFO  [RepositoryConfigurationExtensionSupport][restartedMain] - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.taller.concesionario.repository.UsuarioRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[m[32m2021-11-13 16:38:14.110 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 74 ms. Found 0 JDBC repository interfaces.
+[m[32m2021-11-13 16:38:14.137 INFO  [RepositoryConfigurationDelegate][restartedMain] - Multiple Spring Data modules found, entering strict repository configuration mode!
+[m[32m2021-11-13 16:38:14.138 INFO  [RepositoryConfigurationDelegate][restartedMain] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[m[32m2021-11-13 16:38:14.222 INFO  [RepositoryConfigurationDelegate][restartedMain] - Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
+[m[32m2021-11-13 16:38:14.493 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@702e173' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-13 16:38:14.498 INFO  [PostProcessorRegistrationDelegate$BeanPostProcessorChecker][restartedMain] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[m[32m2021-11-13 16:38:14.777 INFO  [TomcatWebServer][restartedMain] - Tomcat initialized with port(s): 8080 (http)
+[m[32m2021-11-13 16:38:14.795 INFO  [Http11NioProtocol][restartedMain] - Initializing ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-13 16:38:14.800 INFO  [StandardService][restartedMain] - Starting service [Tomcat]
+[m[32m2021-11-13 16:38:14.805 INFO  [StandardEngine][restartedMain] - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[m[32m2021-11-13 16:38:14.827 INFO  [[/]][restartedMain] - Initializing Spring embedded WebApplicationContext
+[m[32m2021-11-13 16:38:14.827 INFO  [ServletWebServerApplicationContext][restartedMain] - Root WebApplicationContext: initialization completed in 2290 ms
+[m[33m2021-11-13 16:38:15.245 WARN  [JpaBaseConfiguration$JpaWebConfiguration][restartedMain] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[m[32m2021-11-13 16:38:15.709 INFO  [HikariDataSource][restartedMain] - HikariPool-3 - Starting...
+[m[32m2021-11-13 16:38:18.433 INFO  [HikariDataSource][restartedMain] - HikariPool-3 - Start completed.
+[m[32m2021-11-13 16:38:22.411 INFO  [LocalContainerEntityManagerFactoryBean][restartedMain] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-13 16:38:25.494 INFO  [DefaultSecurityFilterChain][restartedMain] - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72a2c98d, org.springframework.security.web.context.SecurityContextPersistenceFilter@10d388eb, org.springframework.security.web.header.HeaderWriterFilter@964ed67, org.springframework.web.filter.CorsFilter@33782e36, org.springframework.security.web.authentication.logout.LogoutFilter@5e58c1d9, com.taller.concesionario.jwt.JwtTokenFilter@3fcc4a1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53f0a6b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7dd1667e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32202c78, org.springframework.security.web.session.SessionManagementFilter@707be8a6, org.springframework.security.web.access.ExceptionTranslationFilter@4640a41f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58c74772]
+[m[32m2021-11-13 16:38:25.964 INFO  [OptionalLiveReloadServer][restartedMain] - LiveReload server is running on port 35729
+[m[32m2021-11-13 16:38:26.004 INFO  [Http11NioProtocol][restartedMain] - Starting ProtocolHandler ["http-nio-8080"]
+[m[32m2021-11-13 16:38:26.007 INFO  [TomcatWebServer][restartedMain] - Tomcat started on port(s): 8080 (http) with context path ''
+[m[32m2021-11-13 16:38:26.020 INFO  [ConcesionarioApplication][restartedMain] - Started ConcesionarioApplication in 38.749 seconds (JVM running for 775.736)
+[m[32m2021-11-13 16:38:26.026 INFO  [ConditionEvaluationDeltaLoggingListener][restartedMain] - Condition evaluation unchanged
+[m[32m2021-11-13 16:39:49.228 INFO  [LocalContainerEntityManagerFactoryBean][Thread-12] - Closing JPA EntityManagerFactory for persistence unit 'default'
+[m[32m2021-11-13 16:39:49.236 INFO  [HikariDataSource][Thread-12] - HikariPool-3 - Shutdown initiated...
+[m[32m2021-11-13 16:39:49.277 INFO  [HikariDataSource][Thread-12] - HikariPool-3 - Shutdown completed.
 [m

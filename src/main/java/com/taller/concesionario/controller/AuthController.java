@@ -86,7 +86,7 @@ public class AuthController {
             return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST); 
 
         if(StringUtils.isBlank(nuevoUsuario.getPassword()))
-            return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria y debe tener 6"), HttpStatus.BAD_REQUEST);    
+            return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
         
         if(usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())){
             return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
