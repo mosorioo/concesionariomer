@@ -155,31 +155,33 @@ public class UsuarioController {
         //Generico
         try {
             
-            if(StringUtils.isBlank(usuarioDto.getNombre()))
-            return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            // if(StringUtils.isBlank(usuarioDto.getNombre()))
+            // return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
     
-            if(StringUtils.isBlank(usuarioDto.getApellido()))
-            return new ResponseEntity<>(new MensajeDto("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
+            // if(StringUtils.isBlank(usuarioDto.getApellido()))
+            // return new ResponseEntity<>(new MensajeDto("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
     
-            if(StringUtils.isBlank(usuarioDto.getNombreUsuario()))
-                return new ResponseEntity<>(new MensajeDto("El nombre de usuario es obligatorio"), HttpStatus.BAD_REQUEST);
+            // if(StringUtils.isBlank(usuarioDto.getNombreUsuario()))
+            //     return new ResponseEntity<>(new MensajeDto("El nombre de usuario es obligatorio"), HttpStatus.BAD_REQUEST);
     
-            if(StringUtils.isBlank(usuarioDto.getEmail()))
-                return new ResponseEntity<>(new MensajeDto("El e-mail es obligatorio"), HttpStatus.BAD_REQUEST);
+            // if(StringUtils.isBlank(usuarioDto.getEmail()))
+            //     return new ResponseEntity<>(new MensajeDto("El e-mail es obligatorio"), HttpStatus.BAD_REQUEST);
     
-            if(usuarioDto.getDni() == null)
-                return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST); 
+            // if(usuarioDto.getDni() == null)
+            //     return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST); 
     
-            if(StringUtils.isBlank(usuarioDto.getPassword()))
-                return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
+            // if(StringUtils.isBlank(usuarioDto.getPassword()))
+            //     return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
             
+            // if(usuarioService.existsByUsuario(usuarioDto.getNombreUsuario())){
+            //     return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
+            // }
+
             if (bindingResult.hasErrors()) {
-                //return new ResponseEntity<>(new MensajeDto("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
-                return new ResponseEntity<>(new MensajeDto("Campos incorrectos o incompletos. Nombre, Apellido, Nombre de Usuario, Email: hasta 20 caracteres, Contrasena = 6 caracteres"), HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>(new MensajeDto("Campos incorrectos o incompletos. Nombre, Apellido, Nombre de Usuario, Email (Cumplir Formato Email): MAX 20 caracteres, DNI MAX 999999999, Contrasena = 6 caracteres"), HttpStatus.BAD_REQUEST);
             }
     
             usuarioService.editarUsuario(usuarioDto);
-            //return new ResponseEntity<>(new MensajeDto("Usuario actualizado"), HttpStatus.CREATED); 
             return new ResponseEntity<>(usuarioDto, HttpStatus.OK); //Agregar: mostrar los datos del usuario creado
 
         } catch (Exception e) {

@@ -70,23 +70,27 @@ public class AuthController {
     public ResponseEntity<?> nuevoUsuario(@Valid @RequestBody NuevoUsuarioDto nuevoUsuario,
                                           BindingResult bindingResult){
 
-        if(StringUtils.isBlank(nuevoUsuario.getNombre()))
-        return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        if(bindingResult.hasErrors()){
+            return new ResponseEntity<>(new MensajeDto("Campos incorrectos o incompletos. Nombre, Apellido, Nombre de Usuario, Email (Cumplir Formato Email): MAX 20 caracteres, DNI MAX 999999999, Contraseña = 6 caracteres"), HttpStatus.BAD_REQUEST);
+        }
+        
+        // if(StringUtils.isBlank(nuevoUsuario.getNombre()))
+        // return new ResponseEntity<>(new MensajeDto("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
 
-        if(StringUtils.isBlank(nuevoUsuario.getApellido()))
-        return new ResponseEntity<>(new MensajeDto("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
+        // if(StringUtils.isBlank(nuevoUsuario.getApellido()))
+        // return new ResponseEntity<>(new MensajeDto("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
 
-        if(StringUtils.isBlank(nuevoUsuario.getNombreUsuario()))
-            return new ResponseEntity<>(new MensajeDto("El nombre de usuario es obligatorio"), HttpStatus.BAD_REQUEST);
+        // if(StringUtils.isBlank(nuevoUsuario.getNombreUsuario()))
+        //     return new ResponseEntity<>(new MensajeDto("El nombre de usuario es obligatorio"), HttpStatus.BAD_REQUEST);
 
-        if(StringUtils.isBlank(nuevoUsuario.getEmail()))
-            return new ResponseEntity<>(new MensajeDto("El e-mail es obligatorio"), HttpStatus.BAD_REQUEST);
+        // if(StringUtils.isBlank(nuevoUsuario.getEmail()))
+        //     return new ResponseEntity<>(new MensajeDto("El e-mail es obligatorio"), HttpStatus.BAD_REQUEST);
 
-        if(nuevoUsuario.getDni() == null)
-            return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST); 
+        // if(nuevoUsuario.getDni() == null)
+        //     return new ResponseEntity<>(new MensajeDto("El DNI es obligatorio"), HttpStatus.BAD_REQUEST); 
 
-        if(StringUtils.isBlank(nuevoUsuario.getPassword()))
-            return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
+        // if(StringUtils.isBlank(nuevoUsuario.getPassword()))
+        //     return new ResponseEntity<>(new MensajeDto("La contraseña es obligatoria"), HttpStatus.BAD_REQUEST);    
         
         if(usuarioService.existsByUsuario(nuevoUsuario.getNombreUsuario())){
             return new ResponseEntity<>(new MensajeDto("Nombre de usuario existente"), HttpStatus.CONFLICT);
@@ -98,11 +102,6 @@ public class AuthController {
     
         if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
             return new ResponseEntity<>(new MensajeDto("Email existente"), HttpStatus.CONFLICT);
-        }
-
-        if(bindingResult.hasErrors()){
-            return new ResponseEntity<>(new MensajeDto("Campos incorrectos o incompletos. Nombre, Apellido, Nombre de Usuario, Email: hasta 20 caracteres, Contrasena = 6 caracteres"), HttpStatus.BAD_REQUEST);
-            //return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getApellido(),nuevoUsuario.getDni(), nuevoUsuario.getNombreUsuario(),
